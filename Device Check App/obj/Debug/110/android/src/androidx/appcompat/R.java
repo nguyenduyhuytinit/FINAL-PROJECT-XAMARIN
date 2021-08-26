@@ -789,14 +789,14 @@ public final class R {
 		public static final int titleDividerNoCustom = 0x7f0801c1;
 		public static final int title_template = 0x7f0801c2;
 		public static final int topPanel = 0x7f0801c5;
-		public static final int unchecked = 0x7f0801d3;
-		public static final int uniform = 0x7f0801d4;
-		public static final int up = 0x7f0801d6;
-		public static final int view_tree_lifecycle_owner = 0x7f0801db;
-		public static final int view_tree_saved_state_registry_owner = 0x7f0801dc;
-		public static final int view_tree_view_model_store_owner = 0x7f0801dd;
-		public static final int visible_removing_fragment_view_tag = 0x7f0801df;
-		public static final int wrap_content = 0x7f0801e4;
+		public static final int unchecked = 0x7f0801d6;
+		public static final int uniform = 0x7f0801d7;
+		public static final int up = 0x7f0801d9;
+		public static final int view_tree_lifecycle_owner = 0x7f0801de;
+		public static final int view_tree_saved_state_registry_owner = 0x7f0801df;
+		public static final int view_tree_view_model_store_owner = 0x7f0801e0;
+		public static final int visible_removing_fragment_view_tag = 0x7f0801e2;
+		public static final int wrap_content = 0x7f0801e7;
 	}
 	public static final class integer {
 		public static final int abc_config_activityDefaultDur = 0x7f090000;

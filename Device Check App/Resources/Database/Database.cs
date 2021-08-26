@@ -72,9 +72,9 @@ namespace Device_Check_App.Resources.Database
         {
             try
             {
-                using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "Persons.db")))
+                using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "Device.db")))
                 {
-                    connection.Query<Device>("UPDATE Device set Device_Name=?, Status=?, Borrower=?, Team_Borrower=?  Where Id=?", device.Device_Name, device.Status, device.Borrower, device.Team_Borrower);
+                    connection.Query<Device>("UPDATE Device set Device_Name=?, Status=?, Borrower=?, Team_Borrower=?, Borrowed_Date=?, Return_Date=?, Reason_Borrow=?  Where Id=?", device.Device_Name, device.Status, device.Borrower, device.Team_Borrower,device.Borrowed_Date, device.Return_Date, device.Reason_Borrow, device.Id);
                     return true;
                 }
             }

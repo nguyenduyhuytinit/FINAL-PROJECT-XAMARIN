@@ -6055,19 +6055,16 @@ namespace Device_Check_App
 			public const int blocking = 2131230815;
 			
 			// aapt resource value: 0x7F080060
-			public const int borrow = 2131230816;
+			public const int borrowedDate = 2131230816;
 			
 			// aapt resource value: 0x7F080061
-			public const int borrowedDate = 2131230817;
+			public const int borrower = 2131230817;
 			
 			// aapt resource value: 0x7F080062
-			public const int borrower = 2131230818;
+			public const int borrowerTeam = 2131230818;
 			
 			// aapt resource value: 0x7F080063
-			public const int borrowerTeam = 2131230819;
-			
-			// aapt resource value: 0x7F080064
-			public const int bottom = 2131230820;
+			public const int bottom = 2131230819;
 			
 			// aapt resource value: 0x7F080001
 			public const int BOTTOM_END = 2131230721;
@@ -6075,32 +6072,35 @@ namespace Device_Check_App
 			// aapt resource value: 0x7F080002
 			public const int BOTTOM_START = 2131230722;
 			
+			// aapt resource value: 0x7F080064
+			public const int bounce = 2131230820;
+			
 			// aapt resource value: 0x7F080065
-			public const int bounce = 2131230821;
+			public const int bounceBoth = 2131230821;
 			
 			// aapt resource value: 0x7F080066
-			public const int bounceBoth = 2131230822;
+			public const int bounceEnd = 2131230822;
 			
 			// aapt resource value: 0x7F080067
-			public const int bounceEnd = 2131230823;
+			public const int bounceStart = 2131230823;
 			
 			// aapt resource value: 0x7F080068
-			public const int bounceStart = 2131230824;
-			
-			// aapt resource value: 0x7F080069
-			public const int browser_actions_header_text = 2131230825;
-			
-			// aapt resource value: 0x7F08006C
-			public const int browser_actions_menu_items = 2131230828;
-			
-			// aapt resource value: 0x7F08006A
-			public const int browser_actions_menu_item_icon = 2131230826;
+			public const int browser_actions_header_text = 2131230824;
 			
 			// aapt resource value: 0x7F08006B
-			public const int browser_actions_menu_item_text = 2131230827;
+			public const int browser_actions_menu_items = 2131230827;
+			
+			// aapt resource value: 0x7F080069
+			public const int browser_actions_menu_item_icon = 2131230825;
+			
+			// aapt resource value: 0x7F08006A
+			public const int browser_actions_menu_item_text = 2131230826;
+			
+			// aapt resource value: 0x7F08006C
+			public const int browser_actions_menu_view = 2131230828;
 			
 			// aapt resource value: 0x7F08006D
-			public const int browser_actions_menu_view = 2131230829;
+			public const int btnborrow = 2131230829;
 			
 			// aapt resource value: 0x7F08006E
 			public const int buttonPanel = 2131230830;
@@ -7198,79 +7198,88 @@ namespace Device_Check_App
 			public const int txtView_Borrower = 2131231183;
 			
 			// aapt resource value: 0x7F0801D0
-			public const int txtView_BorrowerTeam = 2131231184;
+			public const int txtView_BorrowerDate = 2131231184;
 			
 			// aapt resource value: 0x7F0801D1
-			public const int txtView_DeviceName = 2131231185;
+			public const int txtView_BorrowerTeam = 2131231185;
 			
 			// aapt resource value: 0x7F0801D2
-			public const int txtView_Status = 2131231186;
+			public const int txtView_DeviceName = 2131231186;
 			
 			// aapt resource value: 0x7F0801D3
-			public const int @unchecked = 2131231187;
+			public const int txtView_Reason = 2131231187;
 			
 			// aapt resource value: 0x7F0801D4
-			public const int uniform = 2131231188;
+			public const int txtView_ReturnDate = 2131231188;
 			
 			// aapt resource value: 0x7F0801D5
-			public const int unlabeled = 2131231189;
+			public const int txtView_Status = 2131231189;
 			
 			// aapt resource value: 0x7F0801D6
-			public const int up = 2131231190;
+			public const int @unchecked = 2131231190;
 			
 			// aapt resource value: 0x7F0801D7
-			public const int useLogo = 2131231191;
+			public const int uniform = 2131231191;
 			
 			// aapt resource value: 0x7F0801D8
-			public const int vertical_only = 2131231192;
+			public const int unlabeled = 2131231192;
 			
 			// aapt resource value: 0x7F0801D9
-			public const int view_offset_helper = 2131231193;
+			public const int up = 2131231193;
 			
 			// aapt resource value: 0x7F0801DA
-			public const int view_transition = 2131231194;
+			public const int useLogo = 2131231194;
 			
 			// aapt resource value: 0x7F0801DB
-			public const int view_tree_lifecycle_owner = 2131231195;
+			public const int vertical_only = 2131231195;
 			
 			// aapt resource value: 0x7F0801DC
-			public const int view_tree_saved_state_registry_owner = 2131231196;
+			public const int view_offset_helper = 2131231196;
 			
 			// aapt resource value: 0x7F0801DD
-			public const int view_tree_view_model_store_owner = 2131231197;
+			public const int view_transition = 2131231197;
 			
 			// aapt resource value: 0x7F0801DE
-			public const int visible = 2131231198;
+			public const int view_tree_lifecycle_owner = 2131231198;
 			
 			// aapt resource value: 0x7F0801DF
-			public const int visible_removing_fragment_view_tag = 2131231199;
+			public const int view_tree_saved_state_registry_owner = 2131231199;
 			
 			// aapt resource value: 0x7F0801E0
-			public const int west = 2131231200;
-			
-			// aapt resource value: 0x7F0801E2
-			public const int withinBounds = 2131231202;
+			public const int view_tree_view_model_store_owner = 2131231200;
 			
 			// aapt resource value: 0x7F0801E1
-			public const int withText = 2131231201;
+			public const int visible = 2131231201;
+			
+			// aapt resource value: 0x7F0801E2
+			public const int visible_removing_fragment_view_tag = 2131231202;
 			
 			// aapt resource value: 0x7F0801E3
-			public const int wrap = 2131231203;
-			
-			// aapt resource value: 0x7F0801E4
-			public const int wrap_content = 2131231204;
+			public const int west = 2131231203;
 			
 			// aapt resource value: 0x7F0801E5
-			public const int wrap_content_constrained = 2131231205;
+			public const int withinBounds = 2131231205;
+			
+			// aapt resource value: 0x7F0801E4
+			public const int withText = 2131231204;
 			
 			// aapt resource value: 0x7F0801E6
-			public const int x_left = 2131231206;
+			public const int wrap = 2131231206;
 			
 			// aapt resource value: 0x7F0801E7
-			public const int x_right = 2131231207;
+			public const int wrap_content = 2131231207;
 			
 			// aapt resource value: 0x7F0801E8
-			public const int zero_corner_chip = 2131231208;
+			public const int wrap_content_constrained = 2131231208;
+			
+			// aapt resource value: 0x7F0801E9
+			public const int x_left = 2131231209;
+			
+			// aapt resource value: 0x7F0801EA
+			public const int x_right = 2131231210;
+			
+			// aapt resource value: 0x7F0801EB
+			public const int zero_corner_chip = 2131231211;
 			
 			static Id()
 			{

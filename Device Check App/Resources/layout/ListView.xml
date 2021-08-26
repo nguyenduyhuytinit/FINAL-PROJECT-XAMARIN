@@ -29,4 +29,26 @@
         android:layout_height="wrap_content"
         android:id="@+id/txtView_BorrowerTeam" />
 
+    <TextView
+        android:text="Borrow Date"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtView_BorrowerDate" />
+
+      <TextView
+        android:text="Return Date"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtView_ReturnDate" />
+
+    <TextView
+        android:text="Reason Borrow"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtView_Reason" />
+
+
 </LinearLayout>

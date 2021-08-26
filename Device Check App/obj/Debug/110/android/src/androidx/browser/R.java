@@ -112,11 +112,11 @@ public final class R {
 		public static final int actions = 0x7f080044;
 		public static final int async = 0x7f080054;
 		public static final int blocking = 0x7f08005f;
-		public static final int browser_actions_header_text = 0x7f080069;
-		public static final int browser_actions_menu_item_icon = 0x7f08006a;
-		public static final int browser_actions_menu_item_text = 0x7f08006b;
-		public static final int browser_actions_menu_items = 0x7f08006c;
-		public static final int browser_actions_menu_view = 0x7f08006d;
+		public static final int browser_actions_header_text = 0x7f080068;
+		public static final int browser_actions_menu_item_icon = 0x7f080069;
+		public static final int browser_actions_menu_item_text = 0x7f08006a;
+		public static final int browser_actions_menu_items = 0x7f08006b;
+		public static final int browser_actions_menu_view = 0x7f08006c;
 		public static final int chronometer = 0x7f08007e;
 		public static final int dialog_button = 0x7f0800a2;
 		public static final int forever = 0x7f0800c9;

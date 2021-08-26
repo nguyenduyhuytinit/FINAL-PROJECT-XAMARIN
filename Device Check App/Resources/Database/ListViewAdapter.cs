@@ -18,6 +18,12 @@ namespace Device_Check_App.Resources.Database
         public TextView txtView_Status { get; set; }
         public TextView txtView_Borrower { get; set; }
         public TextView txtView_BorrowerTeam { get; set; }
+        public TextView txtView_BorrowerDate { get; set; }
+        public TextView txtView_ReturnDate { get; set; }
+        public TextView txtView_Reason { get; set; }
+
+
+
     }
 
     public class ListViewAdapter : BaseAdapter
@@ -51,10 +57,17 @@ namespace Device_Check_App.Resources.Database
             var txtStatus = view.FindViewById<TextView>(Resource.Id.txtView_Status);
             var txtBorrower = view.FindViewById<TextView>(Resource.Id.txtView_Borrower);
             var txtBorrowerTeam = view.FindViewById<TextView>(Resource.Id.txtView_BorrowerTeam);
+            var txtBorrowDate = view.FindViewById<TextView>(Resource.Id.txtView_BorrowerDate);
+            var txtreturnDate = view.FindViewById<TextView>(Resource.Id.txtView_ReturnDate);
+            var txtreason = view.FindViewById<TextView>(Resource.Id.txtView_Reason);
             txtDeviceName.Text = listDevice[position].Device_Name;
             txtStatus.Text = listDevice[position].Status;
             txtBorrower.Text = listDevice[position].Borrower;
             txtBorrowerTeam.Text = listDevice[position].Team_Borrower;
+            txtBorrowDate.Text = listDevice[position].Borrowed_Date;
+            txtreturnDate.Text = listDevice[position].Return_Date;
+            txtreason.Text = listDevice[position].Reason_Borrow;
+
             return view;
 
         }

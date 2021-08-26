@@ -23,9 +23,10 @@ namespace Device_Check_App
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            SetContentView(Resource.Layout.add);
             // Create your application here
             Button button = FindViewById<Button>(Resource.Id.back);
+
             button.Click += delegate
             {
                 StartActivity(typeof(MainActivity));
@@ -44,7 +45,12 @@ namespace Device_Check_App
                 Device device = new Device()
                 {
                     Device_Name = deviceName.Text,
-                    Status = "Available"
+                    Status = "Available",
+                    Borrower = string.Empty,
+                    Team_Borrower = string.Empty,
+                    Borrowed_Date = string.Empty,
+                    Return_Date = System.DateTime.Now.ToString("yyyy-MM-dd"),
+                    Reason_Borrow = string.Empty
                 };
                 db.insertIntoTable(device);
                 StartActivity(typeof(MainActivity));

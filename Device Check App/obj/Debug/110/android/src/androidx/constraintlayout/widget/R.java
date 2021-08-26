@@ -972,8 +972,8 @@ public final class R {
 		public static final int baseline = 0x7f08005b;
 		public static final int bestChoice = 0x7f08005e;
 		public static final int blocking = 0x7f08005f;
-		public static final int bottom = 0x7f080064;
-		public static final int bounce = 0x7f080065;
+		public static final int bottom = 0x7f080063;
+		public static final int bounce = 0x7f080064;
 		public static final int buttonPanel = 0x7f08006e;
 		public static final int carryVelocity = 0x7f080071;
 		public static final int center = 0x7f080072;
@@ -1136,18 +1136,18 @@ public final class R {
 		public static final int top = 0x7f0801c4;
 		public static final int topPanel = 0x7f0801c5;
 		public static final int triangle = 0x7f0801ce;
-		public static final int unchecked = 0x7f0801d3;
-		public static final int uniform = 0x7f0801d4;
-		public static final int up = 0x7f0801d6;
-		public static final int vertical_only = 0x7f0801d8;
-		public static final int view_transition = 0x7f0801da;
-		public static final int visible = 0x7f0801de;
-		public static final int west = 0x7f0801e0;
-		public static final int wrap = 0x7f0801e3;
-		public static final int wrap_content = 0x7f0801e4;
-		public static final int wrap_content_constrained = 0x7f0801e5;
-		public static final int x_left = 0x7f0801e6;
-		public static final int x_right = 0x7f0801e7;
+		public static final int unchecked = 0x7f0801d6;
+		public static final int uniform = 0x7f0801d7;
+		public static final int up = 0x7f0801d9;
+		public static final int vertical_only = 0x7f0801db;
+		public static final int view_transition = 0x7f0801dd;
+		public static final int visible = 0x7f0801e1;
+		public static final int west = 0x7f0801e3;
+		public static final int wrap = 0x7f0801e6;
+		public static final int wrap_content = 0x7f0801e7;
+		public static final int wrap_content_constrained = 0x7f0801e8;
+		public static final int x_left = 0x7f0801e9;
+		public static final int x_right = 0x7f0801ea;
 	}
 	public static final class integer {
 		public static final int abc_config_activityDefaultDur = 0x7f090000;

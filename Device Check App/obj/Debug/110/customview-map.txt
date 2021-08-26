@@ -4,23 +4,21 @@ background;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 Button;obj\Debug\110\res\layout\activity_main.xml
 Button;obj\Debug\110\res\layout\add.xml
-cache-path;F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+cache-path;F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\lp\41\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 color;obj\Debug\110\res\values\colors.xml
 color;obj\Debug\110\res\values\ic_launcher_background.xml
 EditText;obj\Debug\110\res\layout\activity_main.xml
 EditText;obj\Debug\110\res\layout\add.xml
-external-cache-path;F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
-external-path;F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-cache-path;F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\lp\41\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-path;F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\lp\41\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 item;obj\Debug\110\res\values\styles.xml
 LinearLayout;obj\Debug\110\res\layout\activity_main.xml
 LinearLayout;obj\Debug\110\res\layout\add.xml
-LinearLayout;obj\Debug\110\res\layout\list_view.xml
 LinearLayout;obj\Debug\110\res\layout\listview.xml
 ListView;obj\Debug\110\res\layout\activity_main.xml
-paths;F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
-RelativeLayout;obj\Debug\110\res\layout\activity_main.xml
+paths;F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\lp\41\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 resources;obj\Debug\110\res\values\colors.xml
 resources;obj\Debug\110\res\values\ic_launcher_background.xml
 resources;obj\Debug\110\res\values\strings.xml
@@ -28,5 +26,4 @@ resources;obj\Debug\110\res\values\styles.xml
 string;obj\Debug\110\res\values\strings.xml
 style;obj\Debug\110\res\values\styles.xml
 TextView;obj\Debug\110\res\layout\activity_main.xml
-TextView;obj\Debug\110\res\layout\list_view.xml
 TextView;obj\Debug\110\res\layout\listview.xml

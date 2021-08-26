@@ -27,7 +27,7 @@ namespace Device_Check_App
             //Page Naviagtion    
             Button btnAdd = FindViewById<Button>(Resource.Id.addpage);
             Button btnDelete = FindViewById<Button>(Resource.Id.remove);
-            Button btnBorrow = FindViewById<Button>(Resource.Id.borrow);
+            Button btnBorrow = FindViewById<Button>(Resource.Id.btnborrow);
             Button btnReturn = FindViewById<Button>(Resource.Id.returnDevice);
             var deviceName = FindViewById<TextView>(Resource.Id.deviceName);
             var status = FindViewById<TextView>(Resource.Id.deviceStatus);
@@ -72,8 +72,7 @@ namespace Device_Check_App
             //Button Borrow
             btnBorrow.Click += delegate
             {
-                if (status.Equals("Avalable") || status.Equals("Pending"))
-                {
+
                     Device device = new Device()
                     {
                         Id = int.Parse(deviceName.Tag.ToString()),
@@ -87,11 +86,8 @@ namespace Device_Check_App
                     };
                     db.updateTable(device);
                     LoadData();
-                }
-                else
-                {
-                    Toast.MakeText(this, "Can't borrow this device", ToastLength.Short).Show();
-                }
+                    Toast.MakeText(this, "Susscess borrow this device", ToastLength.Short).Show();
+   
 
 
             };
@@ -99,8 +95,7 @@ namespace Device_Check_App
             //Button Return
             btnReturn.Click += delegate
             {
-                if(status.Equals("Borrowed") || status.Equals("Pending"))
-                {
+               
                     Device device = new Device()
                     {
                         Id = int.Parse(deviceName.Tag.ToString()),
@@ -114,8 +109,8 @@ namespace Device_Check_App
                     };
                     db.updateTable(device);
                     LoadData();
-                }else
-                    Toast.MakeText(this, "Device can't be returned", ToastLength.Short).Show();
+                    Toast.MakeText(this, "Susscess Return this device", ToastLength.Short).Show();
+
 
             };
 
@@ -127,18 +122,17 @@ namespace Device_Check_App
                 for (int i = 0; i < listViewData.Count; i++)
                 {
                     if (e.Position == i)
-                        listViewData.GetChildAt(i).SetBackgroundColor(Android.Graphics.Color.Black);
-                    else
                         listViewData.GetChildAt(i).SetBackgroundColor(Android.Graphics.Color.Transparent);
+
                 }
                 //Binding Data  
                 var txtDeviceName = e.View.FindViewById<TextView>(Resource.Id.txtView_DeviceName);
                 var txtstatus = e.View.FindViewById<TextView>(Resource.Id.txtView_Status);
-                var txtBorrower = e.View.FindViewById<EditText>(Resource.Id.borrower);
-                var txtTeam = e.View.FindViewById<EditText>(Resource.Id.borrowerTeam);
-                var txtReturnDate = e.View.FindViewById<EditText>(Resource.Id.returnDate);
-                var txtBorrowDate = e.View.FindViewById<TextView>(Resource.Id.borrowedDate);
-                var txtReason = e.View.FindViewById<TextView>(Resource.Id.reason);
+                var txtBorrower = e.View.FindViewById<TextView>(Resource.Id.txtView_Borrower);
+                var txtTeam = e.View.FindViewById<TextView>(Resource.Id.txtView_BorrowerTeam);
+                var txtReturnDate = e.View.FindViewById<TextView>(Resource.Id.txtView_ReturnDate);
+                var txtBorrowDate = e.View.FindViewById<TextView>(Resource.Id.txtView_BorrowerDate);
+                var txtReason = e.View.FindViewById<TextView>(Resource.Id.txtView_Reason);
                 deviceName.Tag = e.Id;
                 deviceName.Text = txtDeviceName.Text;
                 status.Text = txtstatus.Text;

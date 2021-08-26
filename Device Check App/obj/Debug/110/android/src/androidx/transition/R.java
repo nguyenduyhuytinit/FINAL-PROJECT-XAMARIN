@@ -646,7 +646,7 @@ public final class R {
 		public static final int alertTitle = 0x7f080049;
 		public static final int async = 0x7f080054;
 		public static final int blocking = 0x7f08005f;
-		public static final int bottom = 0x7f080064;
+		public static final int bottom = 0x7f080063;
 		public static final int buttonPanel = 0x7f08006e;
 		public static final int checkbox = 0x7f080077;
 		public static final int chronometer = 0x7f08007e;
@@ -742,10 +742,10 @@ public final class R {
 		public static final int transition_position = 0x7f0801cb;
 		public static final int transition_scene_layoutid_cache = 0x7f0801cc;
 		public static final int transition_transform = 0x7f0801cd;
-		public static final int uniform = 0x7f0801d4;
-		public static final int up = 0x7f0801d6;
-		public static final int visible_removing_fragment_view_tag = 0x7f0801df;
-		public static final int wrap_content = 0x7f0801e4;
+		public static final int uniform = 0x7f0801d7;
+		public static final int up = 0x7f0801d9;
+		public static final int visible_removing_fragment_view_tag = 0x7f0801e2;
+		public static final int wrap_content = 0x7f0801e7;
 	}
 	public static final class integer {
 		public static final int abc_config_activityDefaultDur = 0x7f090000;
