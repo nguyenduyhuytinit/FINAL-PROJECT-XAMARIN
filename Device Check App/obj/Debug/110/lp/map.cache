@@ -73,3 +73,15 @@ androidx.appcompat.appcompat-resources.aar
 androidx.appcompat.appcompat.aar
 com.google.android.material.material.aar
 androidx.browser.browser.aar
+Xamarin.AndroidX.Annotation.Experimental.dll
+Xamarin.AndroidX.ConstraintLayout.Core.dll
+Xamarin.AndroidX.ConstraintLayout.dll
+Xamarin.AndroidX.DynamicAnimation.dll
+Xamarin.AndroidX.Tracing.Tracing.dll
+Xamarin.AndroidX.ViewPager2.dll
+androidx.annotation.annotation-experimental.aar
+androidx.tracing.tracing.aar
+androidx.viewpager2.viewpager2.aar
+androidx.dynamicanimation.dynamicanimation.aar
+androidx.constraintlayout.constraintlayout.aar
+SQLitePCLRaw.lib.e_sqlite3.android.dll
