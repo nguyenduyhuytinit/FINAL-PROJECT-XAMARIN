@@ -67,12 +67,11 @@ namespace Device_Check_App
                 OnClickReturnDateTxt();
             };
 
-
-
             //Button Borrow
             btnBorrow.Click += delegate
             {
-
+                if (status.Text.Equals("Available")) 
+                {
                     Device device = new Device()
                     {
                         Id = int.Parse(deviceName.Tag.ToString()),
@@ -86,31 +85,33 @@ namespace Device_Check_App
                     };
                     db.updateTable(device);
                     LoadData();
-                    Toast.MakeText(this, "Susscess borrow this device", ToastLength.Short).Show();
-   
-
+                    Toast.MakeText(this, "Susscess borrow this device", ToastLength.Long).Show();
+                }else
+                    Toast.MakeText(this, "Can't borrow because this Device is " + status.Text, ToastLength.Long).Show();
 
             };
 
             //Button Return
             btnReturn.Click += delegate
             {
-               
+                if (status.Text.Equals("Pending") || status.Text.Equals("Borrowed"))
+                {
                     Device device = new Device()
                     {
                         Id = int.Parse(deviceName.Tag.ToString()),
                         Device_Name = deviceName.Text,
                         Status = "Available",
-                        Borrower = "",
-                        Team_Borrower = "",
-                        Borrowed_Date = "",
+                        Borrower = string.Empty,
+                        Team_Borrower = string.Empty,
+                        Borrowed_Date = string.Empty,
                         Return_Date = System.DateTime.Now.ToString("yyyy-MM-dd"),
-                        Reason_Borrow = ""
+                        Reason_Borrow = string.Empty
                     };
                     db.updateTable(device);
                     LoadData();
-                    Toast.MakeText(this, "Susscess Return this device", ToastLength.Short).Show();
-
+                    Toast.MakeText(this, "Susscess Return this device", ToastLength.Long).Show();
+                }else
+                    Toast.MakeText(this, "This device is still available", ToastLength.Long).Show();
 
             };
 

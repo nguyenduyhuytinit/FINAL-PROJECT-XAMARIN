@@ -103,7 +103,7 @@
             android:id="@+id/returnDevice"  
             android:layout_width="match_parent"  
             android:layout_height="wrap_content"  
-            android:text="Return"  
+            android:text="Return & Cancel"  
             />    
 
     </LinearLayout>
