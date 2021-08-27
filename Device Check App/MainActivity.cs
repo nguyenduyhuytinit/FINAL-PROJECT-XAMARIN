@@ -7,6 +7,7 @@ using Device_Check_App.Resources.Database;
 using Device_Check_App.Resources.Models;
 using System;
 using System.Collections.Generic;
+using System.Net.Mail;
 using static Android.App.DatePickerDialog;
 
 namespace Device_Check_App
@@ -14,9 +15,12 @@ namespace Device_Check_App
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : Activity, IOnDateSetListener
     {
+        
         ListView listViewData;
         List<Device> listSource = new List<Device>();
         Database db;
+        MailMessage mail;
+        MailMessage mail1;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -84,6 +88,16 @@ namespace Device_Check_App
                         Reason_Borrow = reason.Text
                     };
                     db.updateTable(device);
+                    //Send Mail
+                    mail = new MailMessage("xamarinproject111@gmail.com", "dunghoanh1996@gmail.com", "System Notice", "Susscess borrow this device");
+                    SmtpClient client = new SmtpClient();
+                    client.Host = ("smtp.gmail.com");
+                    client.Port = 587;
+                    client.Credentials = new System.Net.NetworkCredential("xamarinproject111@gmail.com", "Hoanhdung");
+                    client.EnableSsl = true;
+
+                    client.Send(mail);
+                    //Load Data
                     LoadData();
                     Toast.MakeText(this, "Susscess borrow this device", ToastLength.Long).Show();
                 }else
@@ -109,6 +123,17 @@ namespace Device_Check_App
                     };
                     db.updateTable(device);
                     LoadData();
+                    //Send Mail
+                    mail1 = new MailMessage("xamarinproject111@gmail.com", "dunghoanh1996@gmail.com", "System Notice", "Susscess return this device");
+                    SmtpClient client = new SmtpClient();
+                    client.Host = ("smtp.gmail.com");
+                    client.Port = 587;
+                    client.Credentials = new System.Net.NetworkCredential("xamarinproject111@gmail.com", "Hoanhdung");
+                    client.EnableSsl = true;
+
+                    client.Send(mail1);
+                    //Load Data
+
                     Toast.MakeText(this, "Susscess Return this device", ToastLength.Long).Show();
                 }else
                     Toast.MakeText(this, "This device is still available", ToastLength.Long).Show();
