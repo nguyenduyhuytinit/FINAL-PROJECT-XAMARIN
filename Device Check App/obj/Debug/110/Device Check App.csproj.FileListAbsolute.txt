@@ -1,14 +1,6 @@
-F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\bin\Debug\Device Check App.dll
-F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\bin\Debug\Device Check App.pdb
-F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\bin\Debug\com.companyname.device_check_app.apk
-F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\bin\Debug\com.companyname.device_check_app.aab
-F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\bin\Debug\com.companyname.device_check_app-Signed.aab
-F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\bin\Debug\com.companyname.device_check_app-Signed.apk
-F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\bin\Debug\com.companyname.device_check_app-Signed.apk.idsig
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\MonoAndroid,Version=v11.0.AssemblyAttributes.cs
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\build.props
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\adb.props
-F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\Device Check App.csproj.AssemblyReference.cache
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\stamp\_BuildLibraryImportsCache.stamp
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res.flag
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\lp\41\jl\files.cache
@@ -29,7 +21,14 @@ F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\lp\
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\lp\76\jl\files.cache
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\lp\77\jl\files.cache
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\lp\78\jl\files.cache
-F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\R.txt
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\bin\Debug\Device Check App.dll
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\bin\Debug\Device Check App.pdb
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\bin\Debug\com.companyname.device_check_app.apk
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\bin\Debug\com.companyname.device_check_app.aab
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\bin\Debug\com.companyname.device_check_app-Signed.aab
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\bin\Debug\com.companyname.device_check_app-Signed.apk
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\bin\Debug\com.companyname.device_check_app-Signed.apk.idsig
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\Device Check App.csproj.AssemblyReference.cache
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\R.cs.flag
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\Device Check App.csproj.CoreCompileInputs.cache
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\Device Check App.dll
@@ -62,6 +61,10 @@ F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\layout\listview.xml
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\layout\activity_main.xml
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\layout\add.xml
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\layout\sign_up.xml
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\layout\forggot_pass.xml
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\layout\login.xml
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\R.txt
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\uploadflags.txt
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\resolvedassemblies.hash
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\android\assets\Device Check App.dll
@@ -268,7 +271,10 @@ F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\and
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\android\src\crc64a25b61d9f8ee364f\RectEvaluator.java
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\android\src\crc64a25b61d9f8ee364f\TransitionUtils.java
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\android\src\crc64a25b61d9f8ee364f\TransitionUtils_MatrixEvaluator.java
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\android\src\crc64dbc0678e4ed07dd0\ActivityForgotPass.java
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\android\src\crc64dbc0678e4ed07dd0\ActivitySignup.java
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\android\src\crc64dbc0678e4ed07dd0\Add.java
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\android\src\crc64dbc0678e4ed07dd0\LoginActivity.java
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\android\src\crc64dbc0678e4ed07dd0\MainActivity.java
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\android\src\mono\androidx\activity\contextaware\OnContextAvailableListenerImplementor.java
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\android\src\mono\androidx\appcompat\app\ActionBar_OnMenuVisibilityListenerImplementor.java

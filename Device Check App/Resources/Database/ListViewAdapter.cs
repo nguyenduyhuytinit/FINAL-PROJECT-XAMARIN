@@ -22,8 +22,6 @@ namespace Device_Check_App.Resources.Database
         public TextView txtView_ReturnDate { get; set; }
         public TextView txtView_Reason { get; set; }
 
-
-
     }
 
     public class ListViewAdapter : BaseAdapter

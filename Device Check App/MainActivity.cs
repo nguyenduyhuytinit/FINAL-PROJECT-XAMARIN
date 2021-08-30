@@ -12,7 +12,7 @@ using static Android.App.DatePickerDialog;
 
 namespace Device_Check_App
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
     public class MainActivity : Activity, IOnDateSetListener
     {
         
@@ -28,7 +28,7 @@ namespace Device_Check_App
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
-            //Page Naviagtion    
+             
             Button btnAdd = FindViewById<Button>(Resource.Id.addpage);
             Button btnDelete = FindViewById<Button>(Resource.Id.remove);
             Button btnBorrow = FindViewById<Button>(Resource.Id.btnborrow);
@@ -40,17 +40,17 @@ namespace Device_Check_App
             var returnDate = FindViewById<EditText>(Resource.Id.returnDate);
             var borrowDate = FindViewById<TextView>(Resource.Id.borrowedDate);
             var reason = FindViewById<EditText>(Resource.Id.reason);
-
+            //Load Database
             db = new Database();
             db.createDatabase();
             listViewData = FindViewById<ListView>(Resource.Id.listView);
             LoadData();
-
+            //Page Naviagtion (Add new Page)
             btnAdd.Click += delegate
             {
                 StartActivity(typeof(Add));
             };
-            //Load Database
+           
 
             //Button Delete
             btnDelete.Click += delegate
@@ -122,6 +122,7 @@ namespace Device_Check_App
                         Reason_Borrow = string.Empty
                     };
                     db.updateTable(device);
+                    //Load Data
                     LoadData();
                     //Send Mail
                     mail1 = new MailMessage("xamarinproject111@gmail.com", "dunghoanh1996@gmail.com", "System Notice", "Susscess return this device");
@@ -132,7 +133,7 @@ namespace Device_Check_App
                     client.EnableSsl = true;
 
                     client.Send(mail1);
-                    //Load Data
+                    
 
                     Toast.MakeText(this, "Susscess Return this device", ToastLength.Long).Show();
                 }else
