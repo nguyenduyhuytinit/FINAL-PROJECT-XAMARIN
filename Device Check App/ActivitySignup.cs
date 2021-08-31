@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.OS;
+using Android.Util;
 using Android.Widget;
 using Device_Check_App.Resources.Models;
 using SQLite;
@@ -50,11 +51,11 @@ namespace Device_Check_App
             try
             {
                 //Password equal confirm_pass ---editTextEmail.Text !="" && editTextPass.Text !="" && editTextPass.Text == editTextConfirmPass.Text
-                if ((string.IsNullOrWhiteSpace(editTextEmail.Text))||(string.IsNullOrWhiteSpace(editTextPass.Text))||
-                    (string.IsNullOrEmpty(editTextEmail.Text))||(string.IsNullOrEmpty(editTextPass.Text)))
+                if ((string.IsNullOrWhiteSpace(editTextEmail.Text)) || (string.IsNullOrWhiteSpace(editTextPass.Text)) ||
+                    (string.IsNullOrEmpty(editTextEmail.Text)) || (string.IsNullOrEmpty(editTextPass.Text)))
                 {
                     Toast.MakeText(this, "Information is invalid", ToastLength.Short).Show();
-                    
+
                 }
                 //Check email input: using built-in method  OR Regex custom
                 else if (!emailValidate)
@@ -62,26 +63,28 @@ namespace Device_Check_App
                     Toast.MakeText(this, " Invalid email", ToastLength.Short).Show();
 
                 }
-                else if(isValidPass(inputPass)==false)
+                else if (isValidPass(inputPass) == false)
                 {
                     Toast.MakeText(this, "Password length must have digit, lower letter, upper leter and special character", ToastLength.Short).Show();
 
                 }
-                else if(!string.Equals(editTextPass.Text, editTextConfirmPass.Text))
+                else if (!string.Equals(editTextPass.Text, editTextConfirmPass.Text))
                 {
                     //editTextPass.Text = string.Empty;
                     editTextConfirmPass.Text = string.Empty;
                     Toast.MakeText(this, "Password is not match", ToastLength.Short).Show();
-                }    
+                }
                 else
                 {
                     string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Device.db3");
                     var db = new SQLiteConnection(dbPath);
                     db.CreateTable<User>();
-                    User tbl = new User();
-                    tbl.Email = editTextEmail.Text;
-                    tbl.Password = editTextPass.Text;
-                    tbl.Role = "USER";
+                    User tbl = new User()
+                    {
+                        Email = editTextEmail.Text,
+                        Password = editTextPass.Text,
+                        Role = "USER" 
+                    };
                     //TODO WHAT??    Xứ lý ràng buộc unique email 
                     //var SQL = db.Query<LoginTable>("SELECT * from users where email=editTextEmail.Text"); failed
 
@@ -100,6 +103,7 @@ namespace Device_Check_App
             }
             catch(Exception ex)
             {
+                Log.Info("SQLiteEx", ex.Message);
                 Toast.MakeText(this, ex.ToString(), ToastLength.Short).Show();
             }
         }

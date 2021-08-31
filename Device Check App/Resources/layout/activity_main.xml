@@ -2,9 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#515F8E">
+        
+        
+        <LinearLayout  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:orientation="horizontal">
+        
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Username:"
+        android:textSize="@dimen/abc_action_bar_icon_vertical_padding_material"
+        android:id="@+id/userName"
+        /> 
 
-     <TextView
+        </LinearLayout>
+        
+     
+        <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Device Name"
