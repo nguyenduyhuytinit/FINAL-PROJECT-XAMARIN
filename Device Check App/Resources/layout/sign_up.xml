@@ -86,7 +86,6 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:text="USER"
-          android:checked="true"
           android:textColor="@android:color/white"
           />
       <RadioButton android:id="@+id/radio_admin"

@@ -25,8 +25,9 @@ namespace Device_Check_App
         MailMessage mail;
         MailMessage mail1;
         Device deivice;
+        ISharedPreferencesEditor sessionedditor;
         ISharedPreferences session  = Application.Context.GetSharedPreferences("filename", FileCreationMode.Private);
-        string SESSSION_EMAIL, SESSSION_ROLE;
+        string SESSSION_EMAIL, SESSSION_ROLE, SESSION_BORRWEREMAIL;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -76,12 +77,13 @@ namespace Device_Check_App
                         Id = int.Parse(deviceName.Tag.ToString()),
                         Device_Name = deviceName.Text,
                         Status = "Pending",
-                        Borrower = borrower.Text,
+                        Borrower = session.GetString("EMAIL", ""),
                         Team_Borrower = teamName.Text,
                         Borrowed_Date = System.DateTime.Now.ToString("yyyy-MM-dd"),
                         Return_Date = returnDate.Text,
                         Reason_Borrow = reason.Text,
-                        Uname = session.GetString("EMAIL", "").Split('@')[0]
+                        Uname = session.GetString("EMAIL", "")
+  
 
                     };
                     db.updateTable(device);
@@ -90,7 +92,7 @@ namespace Device_Check_App
                     SmtpClient client = new SmtpClient();
                     client.Host = ("smtp.gmail.com");
                     client.Port = 587;
-                    client.Credentials = new System.Net.NetworkCredential("xamarinproject111@gmail.com", SESSSION_EMAIL.Split('@')[0]);
+                    client.Credentials = new System.Net.NetworkCredential("xamarinproject111@gmail.com", "Hoanhdung");
                     client.EnableSsl = true;
 
                     client.Send(mail);
@@ -123,11 +125,11 @@ namespace Device_Check_App
                     //Load Data
                     LoadData();
                     //Send Mail
-                    mail1 = new MailMessage("xamarinproject111@gmail.com", SESSSION_EMAIL, "System Notice", "Susscess return this device");
+                    mail1 = new MailMessage("xamarinproject111@gmail.com", borrower.Text, "System Notice", "Susscess return this device");
                     SmtpClient client = new SmtpClient();
                     client.Host = ("smtp.gmail.com");
                     client.Port = 587;
-                    client.Credentials = new System.Net.NetworkCredential("xamarinproject111@gmail.com", SESSSION_EMAIL.Split('@')[0]);
+                    client.Credentials = new System.Net.NetworkCredential("xamarinproject111@gmail.com", "Hoanhdung");
                     client.EnableSsl = true;
 
                     client.Send(mail1);
@@ -183,7 +185,7 @@ namespace Device_Check_App
 
         private void LoadData()
         {
-            string split = SESSSION_EMAIL.Split('@')[0];
+            string split = SESSSION_EMAIL;
 
            listSource = db.selectTableByUserName(split);
 

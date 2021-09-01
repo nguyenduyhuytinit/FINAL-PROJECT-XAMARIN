@@ -174,13 +174,13 @@ namespace Device_Check_App.Resources.Database
         }
 
         //get Role
-        public string getRole(string userName)
+        public string getRole( string userName)
         {
             try
             {
                 using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "Device.db")))
                 {
-                    return connection.Query<User>("SELECT Role FROM users Where Email = ? ", userName).ToString();
+                    return connection.Query<Device>("SELECT Role FROM users Where Email = ? ", userName).FirstOrDefault().ToString();
                 }
             }
             catch (SQLiteException ex)

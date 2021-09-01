@@ -21,7 +21,7 @@ namespace Device_Check_App
         private EditText editTextPass;
         private Button loginBtn;
         private Button buttonFacebook;
-        private Database _db;
+     
         ISharedPreferencesEditor session;
         ISharedPreferences sp = Application.Context.GetSharedPreferences("filename", FileCreationMode.Private);
         string SESSSION_EMAIL;
@@ -73,19 +73,36 @@ namespace Device_Check_App
             editTextPass = FindViewById<EditText>(Resource.Id.editTextPass);
             RadioButton radioBtnAdmin = FindViewById<RadioButton>(Resource.Id.radio_admin);
             RadioButton radioBtnUser = FindViewById<RadioButton>(Resource.Id.radio_user);
-            
+             Database _db = new Database();
 
-            //Get user from table=[users] === Info entry
-            string dpPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Device.db");
+        //Get user from table=[users] === Info entry
+        string dpPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Device.db");
             var db = new SQLiteConnection(dpPath);
             var data = db.Table<User>(); //Call table
 
             //LINQ querry
-            var dataLogin = data.Where(x => x.Email == editTextLogin.Text && x.Password == editTextPass.Text).FirstOrDefault();
+            var dataLoginUser = data.Where(x => x.Email == editTextLogin.Text && x.Password == editTextPass.Text && x.Role == "USER").FirstOrDefault();
+            var dataLoginAdmin = data.Where(x => x.Email == editTextLogin.Text && x.Password == editTextPass.Text && x.Role == "ADMIN").FirstOrDefault();
             if (editTextLogin.Text != "" && editTextPass.Text != "")
             {
               
-                if (dataLogin != null)
+                if (dataLoginUser != null )
+                {
+                    Toast.MakeText(this, "Login successful", ToastLength.Short).Show();
+                    //TODO
+                    //Save SESSION
+                    SESSSION_EMAIL = editTextLogin.Text;
+                    //ROLES***************************************************
+
+                    //Add roles
+                    session = sp.Edit();
+                    session.PutString("EMAIL", SESSSION_EMAIL);
+                    session.Commit();
+                    //Redicrect to list devices
+                    string role = _db.getRole( editTextLogin.Text);
+                        StartActivity(typeof(MainActivity));
+
+                }else if(dataLoginAdmin != null)
                 {
                     Toast.MakeText(this, "Login successful", ToastLength.Short).Show();
                     //TODO
@@ -99,10 +116,7 @@ namespace Device_Check_App
                     session.Commit();
                     //Redicrect to list devices
                     string role = _db.getRole(editTextLogin.Text);
-                    if (role == "ADMIN")
-                        StartActivity(typeof(Admin_Activity));
-                    else   
-                        StartActivity(typeof(MainActivity));
+                    StartActivity(typeof(Admin_Activity));
                 }
                 else
                 {

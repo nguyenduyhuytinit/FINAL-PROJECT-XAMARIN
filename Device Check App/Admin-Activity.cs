@@ -23,6 +23,9 @@ namespace Device_Check_App
         Database db;
         MailMessage mail;
         MailMessage mail1;
+        ISharedPreferences session = Application.Context.GetSharedPreferences("filename", FileCreationMode.Private);
+        string SESSSION_EMAIL, SESSSION_ROLE;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -33,7 +36,6 @@ namespace Device_Check_App
             Button btnAdd = FindViewById<Button>(Resource.Id.addpage);
             Button btnDelete = FindViewById<Button>(Resource.Id.remove);
             Button btnAppove = FindViewById<Button>(Resource.Id.btnApproved);
-            Button btnReturn = FindViewById<Button>(Resource.Id.returnDevice);
             var deviceName = FindViewById<TextView>(Resource.Id.deviceName);
             var status = FindViewById<TextView>(Resource.Id.deviceStatus);
             var borrower = FindViewById<EditText>(Resource.Id.borrower);
@@ -41,6 +43,12 @@ namespace Device_Check_App
             var returnDate = FindViewById<EditText>(Resource.Id.returnDate);
             var borrowDate = FindViewById<TextView>(Resource.Id.borrowedDate);
             var reason = FindViewById<EditText>(Resource.Id.reason);
+            var userName = FindViewById<TextView>(Resource.Id.userName);
+
+
+            //get Username
+            SESSSION_EMAIL = session.GetString("EMAIL", "");
+            userName.Text = SESSSION_EMAIL;
             //Load Database
             db = new Database();
             db.createDatabase();
@@ -86,11 +94,12 @@ namespace Device_Check_App
                         Team_Borrower = teamName.Text,
                         Borrowed_Date = System.DateTime.Now.ToString("yyyy-MM-dd"),
                         Return_Date = returnDate.Text,
-                        Reason_Borrow = reason.Text
+                        Reason_Borrow = reason.Text,
+                        Uname = borrower.Text
                     };
                     db.updateTable(device);
                     //Send Mail
-                    mail = new MailMessage("xamarinproject111@gmail.com", "dunghoanh1996@gmail.com", "System Notice", "Your Request Was Approved");
+                    mail = new MailMessage("xamarinproject111@gmail.com", borrower.Text, "System Notice", "Your Request Was Approved");
                     SmtpClient client = new SmtpClient();
                     client.Host = ("smtp.gmail.com");
                     client.Port = 587;
@@ -107,42 +116,7 @@ namespace Device_Check_App
 
             };
 
-            //Button Return
-            btnReturn.Click += delegate
-            {
-                if (status.Text.Equals("Pending") || status.Text.Equals("Borrowed"))
-                {
-                    Device device = new Device()
-                    {
-                        Id = int.Parse(deviceName.Tag.ToString()),
-                        Device_Name = deviceName.Text,
-                        Status = "Available",
-                        Borrower = string.Empty,
-                        Team_Borrower = string.Empty,
-                        Borrowed_Date = string.Empty,
-                        Return_Date = System.DateTime.Now.ToString("yyyy-MM-dd"),
-                        Reason_Borrow = string.Empty
-                    };
-                    db.updateTable(device);
-                    //Load Data
-                    LoadData();
-                    //Send Mail
-                    mail1 = new MailMessage("xamarinproject111@gmail.com", "dunghoanh1996@gmail.com", "System Notice", "Susscess return this device");
-                    SmtpClient client = new SmtpClient();
-                    client.Host = ("smtp.gmail.com");
-                    client.Port = 587;
-                    client.Credentials = new System.Net.NetworkCredential("xamarinproject111@gmail.com", "Hoanhdung");
-                    client.EnableSsl = true;
-
-                    client.Send(mail1);
-
-
-                    Toast.MakeText(this, "Susscess Return this device", ToastLength.Long).Show();
-                }
-                else
-                    Toast.MakeText(this, "This device is still available", ToastLength.Long).Show();
-
-            };
+            
 
             //Item Click
             listViewData.ItemClick += (s, e) =>
