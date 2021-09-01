@@ -12,13 +12,14 @@ using System.Text;
 
 namespace Device_Check_App.Resources.Models
 {
+    [Table("device")]
     public class Device
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-        [Indexed]
-        public string UserId { get; set; }
+ 
+        public string Uname { get; set; }
 
         public string Device_Name { get; set; }
         public string Status { get; set; }

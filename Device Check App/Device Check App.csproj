@@ -62,9 +62,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Add.cs" />
+    <Compile Include="Admin-Activity.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="ActivityForgotPass.cs" />
+    <Compile Include="ActivitySignup.cs" />
     <Compile Include="Resources\Database\Database.cs" />
     <Compile Include="Resources\Database\ListViewAdapter.cs" />
+    <Compile Include="LoginActivity.cs" />
     <Compile Include="Resources\Models\Device.cs" />
     <Compile Include="Resources\Models\User.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -121,6 +125,22 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\add.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\sign_up.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\forggot_pass.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Login.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\admin_activity.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

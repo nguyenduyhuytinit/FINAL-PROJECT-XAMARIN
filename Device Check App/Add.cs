@@ -53,7 +53,7 @@ namespace Device_Check_App
                     Reason_Borrow = string.Empty
                 };
                 db.insertIntoTable(device);
-                StartActivity(typeof(MainActivity));
+                StartActivity(typeof(Admin_Activity));
             };
         }
     }

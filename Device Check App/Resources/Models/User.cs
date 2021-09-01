@@ -12,14 +12,17 @@ using System.Text;
 
 namespace Device_Check_App.Resources.Models
 {
+    [Table("users")]
     public class User
     {
         [PrimaryKey, AutoIncrement]
-        public string Id { get; set; }
+        public int Id { get; set; }
         [Indexed]
         public string DeviceId { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public string Role { get; set; }
+
+        public string Name { get; set; }
     }
 }

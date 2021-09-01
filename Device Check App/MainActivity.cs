@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Widget;
@@ -7,20 +8,26 @@ using Device_Check_App.Resources.Database;
 using Device_Check_App.Resources.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Mail;
 using static Android.App.DatePickerDialog;
 
 namespace Device_Check_App
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
     public class MainActivity : Activity, IOnDateSetListener
     {
         
         ListView listViewData;
         List<Device> listSource = new List<Device>();
         Database db;
+        LoginActivity dbUser;
         MailMessage mail;
         MailMessage mail1;
+        Device deivice;
+        ISharedPreferencesEditor sessionedditor;
+        ISharedPreferences session  = Application.Context.GetSharedPreferences("filename", FileCreationMode.Private);
+        string SESSSION_EMAIL, SESSSION_ROLE, SESSION_BORRWEREMAIL;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -28,7 +35,7 @@ namespace Device_Check_App
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
-            //Page Naviagtion    
+             
             Button btnAdd = FindViewById<Button>(Resource.Id.addpage);
             Button btnDelete = FindViewById<Button>(Resource.Id.remove);
             Button btnBorrow = FindViewById<Button>(Resource.Id.btnborrow);
@@ -40,30 +47,19 @@ namespace Device_Check_App
             var returnDate = FindViewById<EditText>(Resource.Id.returnDate);
             var borrowDate = FindViewById<TextView>(Resource.Id.borrowedDate);
             var reason = FindViewById<EditText>(Resource.Id.reason);
+            var userName = FindViewById<TextView>(Resource.Id.userName);
 
+            //get Username
+            SESSSION_EMAIL = session.GetString("EMAIL", "");
+            SESSSION_ROLE = session.GetString("ROLE", "");
+          
+            userName.Text = SESSSION_EMAIL; 
+
+            //Load Database
             db = new Database();
             db.createDatabase();
             listViewData = FindViewById<ListView>(Resource.Id.listView);
             LoadData();
-
-            btnAdd.Click += delegate
-            {
-                StartActivity(typeof(Add));
-            };
-            //Load Database
-
-            //Button Delete
-            btnDelete.Click += delegate
-            {
-                Device device = new Device()
-                {
-                    Id = int.Parse(deviceName.Tag.ToString()),
-                    Device_Name = deviceName.Text,
-                    Status = status.Text
-                };
-                db.removeTable(device);
-                LoadData();
-            };
 
             //Click Return Date
             returnDate.Click += delegate
@@ -81,15 +77,18 @@ namespace Device_Check_App
                         Id = int.Parse(deviceName.Tag.ToString()),
                         Device_Name = deviceName.Text,
                         Status = "Pending",
-                        Borrower = borrower.Text,
+                        Borrower = session.GetString("EMAIL", ""),
                         Team_Borrower = teamName.Text,
                         Borrowed_Date = System.DateTime.Now.ToString("yyyy-MM-dd"),
                         Return_Date = returnDate.Text,
-                        Reason_Borrow = reason.Text
+                        Reason_Borrow = reason.Text,
+                        Uname = session.GetString("EMAIL", "")
+  
+
                     };
                     db.updateTable(device);
                     //Send Mail
-                    mail = new MailMessage("xamarinproject111@gmail.com", "dunghoanh1996@gmail.com", "System Notice", "Susscess borrow this device");
+                    mail = new MailMessage("xamarinproject111@gmail.com", SESSSION_EMAIL, "System Notice", "Susscess borrow this device");
                     SmtpClient client = new SmtpClient();
                     client.Host = ("smtp.gmail.com");
                     client.Port = 587;
@@ -119,12 +118,14 @@ namespace Device_Check_App
                         Team_Borrower = string.Empty,
                         Borrowed_Date = string.Empty,
                         Return_Date = System.DateTime.Now.ToString("yyyy-MM-dd"),
-                        Reason_Borrow = string.Empty
+                        Reason_Borrow = string.Empty,
+                        Uname = string.Empty
                     };
                     db.updateTable(device);
+                    //Load Data
                     LoadData();
                     //Send Mail
-                    mail1 = new MailMessage("xamarinproject111@gmail.com", "dunghoanh1996@gmail.com", "System Notice", "Susscess return this device");
+                    mail1 = new MailMessage("xamarinproject111@gmail.com", borrower.Text, "System Notice", "Susscess return this device");
                     SmtpClient client = new SmtpClient();
                     client.Host = ("smtp.gmail.com");
                     client.Port = 587;
@@ -132,7 +133,7 @@ namespace Device_Check_App
                     client.EnableSsl = true;
 
                     client.Send(mail1);
-                    //Load Data
+                    
 
                     Toast.MakeText(this, "Susscess Return this device", ToastLength.Long).Show();
                 }else
@@ -184,7 +185,10 @@ namespace Device_Check_App
 
         private void LoadData()
         {
-            listSource = db.selectTable();
+            string split = SESSSION_EMAIL;
+
+           listSource = db.selectTableByUserName(split);
+
             var adapter = new ListViewAdapter(this, listSource);
             listViewData.Adapter = adapter;
         }

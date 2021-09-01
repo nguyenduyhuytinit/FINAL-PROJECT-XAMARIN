@@ -66,6 +66,24 @@ namespace Device_Check_App.Resources.Database
                 return null;
             }
         }
+        //SELECT TABLE WHERE STATUS AND USERNAME
+        public List<Device> selectTableByUserName(string userName)
+        {
+            try
+            {
+                using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "Device.db")))
+                {
+                    return connection.Table<Device>().Where(x => x.Uname.Equals(userName) || x.Status.Equals("Available")).ToList();
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                Log.Info("SQLiteEx", ex.Message);
+                return null;
+            }
+        }
+
+
         //Edit Operation  
 
         public bool updateTable(Device device)
@@ -74,7 +92,7 @@ namespace Device_Check_App.Resources.Database
             {
                 using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "Device.db")))
                 {
-                    connection.Query<Device>("UPDATE Device set Device_Name=?, Status=?, Borrower=?, Team_Borrower=?, Borrowed_Date=?, Return_Date=?, Reason_Borrow=?  Where Id=?", device.Device_Name, device.Status, device.Borrower, device.Team_Borrower,device.Borrowed_Date, device.Return_Date, device.Reason_Borrow, device.Id);
+                    connection.Query<Device>("UPDATE Device set Device_Name=?, Status=?, Borrower=?, Team_Borrower=?, Borrowed_Date=?, Return_Date=?, Reason_Borrow=?, Uname = ? Where Id=?", device.Device_Name, device.Status, device.Borrower, device.Team_Borrower,device.Borrowed_Date, device.Return_Date, device.Reason_Borrow,  device.Uname, device.Id);
                     return true;
                 }
             }
@@ -118,6 +136,57 @@ namespace Device_Check_App.Resources.Database
             {
                 Log.Info("SQLiteEx", ex.Message);
                 return false;
+            }
+        }
+
+        //SELECt Email(UserName)
+        public string getEmail(int Id)
+        {
+            try
+            {
+                using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "Device.db")))
+                {
+                   return  connection.Query<User>("SELECT Email FROM User Where Id=?", Id).ToString();
+                }
+                    
+            }
+            catch (SQLiteException ex)
+            {
+                
+                return Log.Info("SQLiteEx", ex.Message).ToString();
+            }
+        }
+        // Find Status
+        public List<Device> FindAllStatusPending()
+        {
+            try
+            {
+                using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "Device.db")))
+                {
+                    return connection.Query<Device>("SELECT * FROM Device Where Status= ? ", "Pending");
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                Log.Info("SQLiteEx", ex.Message);
+                return null;
+            }
+        }
+
+        //get Role
+        public string getRole( string userName)
+        {
+            try
+            {
+                using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "Device.db")))
+                {
+                    return connection.Query<Device>("SELECT Role FROM users Where Email = ? ", userName).FirstOrDefault().ToString();
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                Log.Info("SQLiteEx", ex.Message);
+                return null;
             }
         }
 
