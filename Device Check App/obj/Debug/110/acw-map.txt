@@ -1,6 +1,9 @@
 Device_Check_App.Add, Device Check App;crc64dbc0678e4ed07dd0.Add
 Device_Check_App.Add;crc64dbc0678e4ed07dd0.Add
 device_check_app.Add;crc64dbc0678e4ed07dd0.Add
+Device_Check_App.Admin_Activity, Device Check App;crc64dbc0678e4ed07dd0.Admin_Activity
+Device_Check_App.Admin_Activity;crc64dbc0678e4ed07dd0.Admin_Activity
+device_check_app.Admin_Activity;crc64dbc0678e4ed07dd0.Admin_Activity
 Device_Check_App.MainActivity, Device Check App;crc64dbc0678e4ed07dd0.MainActivity
 Device_Check_App.MainActivity;crc64dbc0678e4ed07dd0.MainActivity
 device_check_app.MainActivity;crc64dbc0678e4ed07dd0.MainActivity

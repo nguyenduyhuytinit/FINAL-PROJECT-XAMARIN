@@ -61,7 +61,7 @@ namespace Device_Check_App
         {
             string inputEmail = editTextEmail.Text.ToString();
             string inputPass = editTextPass.Text.ToString();
-            string inputName = editName.Text.ToString();
+            
             var emailValidate = isValidEmail(inputEmail);
             RadioButton radioBtnAdmin = FindViewById<RadioButton>(Resource.Id.radio_admin);
             RadioButton radioBtnUser = FindViewById<RadioButton>(Resource.Id.radio_user);

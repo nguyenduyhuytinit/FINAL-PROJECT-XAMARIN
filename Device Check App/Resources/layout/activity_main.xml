@@ -83,19 +83,6 @@
         />
 
 
-     <LinearLayout  
-        android:layout_width="match_parent"  
-        android:layout_height="wrap_content"  
-        android:orientation="horizontal">
-        
-            <Button  
-            android:id="@+id/addpage"  
-            android:layout_width="wrap_content"  
-            android:layout_height="wrap_content"  
-            android:text="Add New Device Page"  
-            android:layout_weight="1"/>  
-
-    </LinearLayout>
 
        <LinearLayout  
         android:layout_width="match_parent"  
@@ -126,19 +113,6 @@
 
     </LinearLayout>
 
-    <LinearLayout  
-        android:layout_width="match_parent"  
-        android:layout_height="wrap_content"  
-        android:orientation="horizontal">
-        
-            <Button  
-            android:id="@+id/remove"  
-            android:layout_width="match_parent"  
-            android:layout_height="wrap_content"  
-            android:text="Remove"  
-            android:layout_weight="1"/>  
-
-    </LinearLayout>
 
 
     <ListView  

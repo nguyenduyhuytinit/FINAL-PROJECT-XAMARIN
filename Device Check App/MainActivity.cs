@@ -59,25 +59,6 @@ namespace Device_Check_App
             db.createDatabase();
             listViewData = FindViewById<ListView>(Resource.Id.listView);
             LoadData();
-            //Page Naviagtion (Add new Page)
-            btnAdd.Click += delegate
-            {
-                StartActivity(typeof(Add));
-            };
-           
-
-            //Button Delete
-            btnDelete.Click += delegate
-            {
-                Device device = new Device()
-                {
-                    Id = int.Parse(deviceName.Tag.ToString()),
-                    Device_Name = deviceName.Text,
-                    Status = status.Text
-                };
-                db.removeTable(device);
-                LoadData();
-            };
 
             //Click Return Date
             returnDate.Click += delegate

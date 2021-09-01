@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Add.cs" />
+    <Compile Include="Admin-Activity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="ActivityForgotPass.cs" />
     <Compile Include="ActivitySignup.cs" />
@@ -135,6 +136,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Login.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\admin_activity.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

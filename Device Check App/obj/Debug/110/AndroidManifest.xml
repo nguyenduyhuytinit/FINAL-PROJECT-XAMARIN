@@ -11,6 +11,7 @@
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme" android:name="android.app.Application" android:debuggable="true" android:extractNativeLibs="true">
     <activity android:label="Add" android:name="crc64dbc0678e4ed07dd0.Add" />
+    <activity android:label="Admin_Activity" android:name="crc64dbc0678e4ed07dd0.Admin_Activity" />
     <activity android:label="@string/app_name" android:theme="@style/AppTheme" android:name="crc64dbc0678e4ed07dd0.MainActivity" />
     <activity android:label="ForgotPass" android:name="crc64dbc0678e4ed07dd0.ActivityForgotPass" />
     <activity android:label="Signup" android:name="crc64dbc0678e4ed07dd0.ActivitySignup" />

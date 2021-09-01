@@ -156,6 +156,39 @@ namespace Device_Check_App.Resources.Database
                 return Log.Info("SQLiteEx", ex.Message).ToString();
             }
         }
+        // Find Status
+        public List<Device> FindAllStatusPending()
+        {
+            try
+            {
+                using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "Device.db")))
+                {
+                    return connection.Query<Device>("SELECT * FROM Device Where Status= ? ", "Pending");
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                Log.Info("SQLiteEx", ex.Message);
+                return null;
+            }
+        }
+
+        //get Role
+        public string getRole(string userName)
+        {
+            try
+            {
+                using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "Device.db")))
+                {
+                    return connection.Query<User>("SELECT Role FROM users Where Email = ? ", userName).ToString();
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                Log.Info("SQLiteEx", ex.Message);
+                return null;
+            }
+        }
 
     }
 }

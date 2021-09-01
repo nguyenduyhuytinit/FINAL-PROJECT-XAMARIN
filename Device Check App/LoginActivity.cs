@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Util;
 using Android.Widget;
+using Device_Check_App.Resources.Database;
 using Device_Check_App.Resources.Models;
 using SQLite;
 using System;
@@ -20,6 +21,7 @@ namespace Device_Check_App
         private EditText editTextPass;
         private Button loginBtn;
         private Button buttonFacebook;
+        private Database _db;
         ISharedPreferencesEditor session;
         ISharedPreferences sp = Application.Context.GetSharedPreferences("filename", FileCreationMode.Private);
         string SESSSION_EMAIL;
@@ -71,6 +73,7 @@ namespace Device_Check_App
             editTextPass = FindViewById<EditText>(Resource.Id.editTextPass);
             RadioButton radioBtnAdmin = FindViewById<RadioButton>(Resource.Id.radio_admin);
             RadioButton radioBtnUser = FindViewById<RadioButton>(Resource.Id.radio_user);
+            
 
             //Get user from table=[users] === Info entry
             string dpPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Device.db");
@@ -91,13 +94,15 @@ namespace Device_Check_App
                     //ROLES***************************************************
 
                     //Add roles
-
                     session = sp.Edit();
                     session.PutString("EMAIL", SESSSION_EMAIL);
                     session.Commit();
                     //Redicrect to list devices
-                    StartActivity(typeof(MainActivity));
-                    
+                    string role = _db.getRole(editTextLogin.Text);
+                    if (role == "ADMIN")
+                        StartActivity(typeof(Admin_Activity));
+                    else   
+                        StartActivity(typeof(MainActivity));
                 }
                 else
                 {
