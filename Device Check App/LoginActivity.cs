@@ -1,6 +1,8 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Util;
 using Android.Widget;
 using Device_Check_App.Resources.Models;
 using SQLite;
@@ -18,9 +20,13 @@ namespace Device_Check_App
         private EditText editTextPass;
         private Button loginBtn;
         private Button buttonFacebook;
+        ISharedPreferencesEditor session;
+        ISharedPreferences sp = Application.Context.GetSharedPreferences("filename", FileCreationMode.Private);
+        string SESSSION_EMAIL;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
 
             // Create your application here
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
@@ -63,10 +69,11 @@ namespace Device_Check_App
 
             editTextLogin = FindViewById<EditText>(Resource.Id.editTextLogin);
             editTextPass = FindViewById<EditText>(Resource.Id.editTextPass);
-
+            RadioButton radioBtnAdmin = FindViewById<RadioButton>(Resource.Id.radio_admin);
+            RadioButton radioBtnUser = FindViewById<RadioButton>(Resource.Id.radio_user);
 
             //Get user from table=[users] === Info entry
-            string dpPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "user.db3");
+            string dpPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Device.db");
             var db = new SQLiteConnection(dpPath);
             var data = db.Table<User>(); //Call table
 
@@ -74,12 +81,23 @@ namespace Device_Check_App
             var dataLogin = data.Where(x => x.Email == editTextLogin.Text && x.Password == editTextPass.Text).FirstOrDefault();
             if (editTextLogin.Text != "" && editTextPass.Text != "")
             {
+              
                 if (dataLogin != null)
                 {
                     Toast.MakeText(this, "Login successful", ToastLength.Short).Show();
-                    //TODO            
+                    //TODO
+                    //Save SESSION
+                    SESSSION_EMAIL = editTextLogin.Text;
+                    //ROLES***************************************************
+
+                    //Add roles
+
+                    session = sp.Edit();
+                    session.PutString("EMAIL", SESSSION_EMAIL);
+                    session.Commit();
                     //Redicrect to list devices
                     StartActivity(typeof(MainActivity));
+                    
                 }
                 else
                 {
@@ -87,8 +105,8 @@ namespace Device_Check_App
                 }
 
             }
-        }
 
+        }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
@@ -96,5 +114,15 @@ namespace Device_Check_App
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
+
+        //ROLES***************************************************
+
+        public void RadioButton_Click(object sender, EventArgs e)
+        {
+            RadioButton rb = (RadioButton)sender;
+            Toast.MakeText(this, "Your role is  " + rb.Text, ToastLength.Short).Show();
+        }
     }
+
 }

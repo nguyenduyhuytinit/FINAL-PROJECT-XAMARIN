@@ -9,6 +9,9 @@
     android:background="#515F8E"
     
     android:orientation="vertical">
+
+
+
     <TextView
         android:text="Sign up"
         android:layout_width="match_parent"
@@ -45,6 +48,8 @@
         android:padding="10dp"
         android:id="@+id/editTextEmail"
         /> 
+
+
        <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,6 +73,29 @@
         />
         
 
+    <RadioGroup
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:layout_marginHorizontal="20dp"
+          android:layout_marginTop="13dp"
+          android:id="@+id/radioGroup1"
+          >
+      <RadioButton
+          android:id="@+id/radio_user"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="USER"
+          android:checked="true"
+          android:textColor="@android:color/white"
+          />
+      <RadioButton android:id="@+id/radio_admin"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="ADMIN" 
+          android:textColor="@android:color/white" />
+      </RadioGroup>
+
  
      <Button
         android:text="Sign up"
@@ -87,8 +115,5 @@
         android:id="@+id/textViewAlreadyAcc" />
    
    
- 
-
-
 
 </LinearLayout>
