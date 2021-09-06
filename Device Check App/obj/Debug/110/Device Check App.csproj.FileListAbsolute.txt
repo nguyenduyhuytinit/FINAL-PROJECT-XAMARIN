@@ -379,3 +379,5 @@ F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\sta
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\drawable\w10n.png
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\drawable\ic_launcher_round.png
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\drawable\add.png
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\drawable\addnewdevice.png

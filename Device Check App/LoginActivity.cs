@@ -36,9 +36,7 @@ namespace Device_Check_App
             // SetContentView(Resource.Layout.forggot_pass);
             SetContentView(Resource.Layout.Login);
 
-            //direct to Sign up
-            textViewSignup = FindViewById<TextView>(Resource.Id.textViewSignup);
-            textViewSignup.Click += delegate { StartActivity(typeof(ActivitySignup)); };
+
 
             // Direct to Forgotpass
             textViewForgotPass = FindViewById<TextView>(Resource.Id.textViewForgotPass);
@@ -57,6 +55,12 @@ namespace Device_Check_App
             buttonFacebook = FindViewById<Button>(Resource.Id.buttonFacebook);
             buttonFacebook.Click += ButtonFacebook_Click;
 
+            //BTN IMAGE SINGUP
+            ImageView buttonImgSignUp = FindViewById<ImageView>(Resource.Id.btnImageSignup);
+            buttonImgSignUp.SetImageResource(Resource.Drawable.add);
+            buttonImgSignUp.Click  += delegate { StartActivity(typeof(ActivitySignup)); };
+
+
             //Add Addmin Account
             string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Device.db");
             var db = new SQLiteConnection(dbPath);
@@ -69,6 +73,7 @@ namespace Device_Check_App
                 db.Insert(admin);
 
         }
+
 
         private void ButtonFacebook_Click(object sender, EventArgs e)
         {

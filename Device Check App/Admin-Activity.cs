@@ -33,7 +33,7 @@ namespace Device_Check_App
             // Create your application here
             SetContentView(Resource.Layout.admin_activity);
 
-            Button btnAdd = FindViewById<Button>(Resource.Id.addpage);
+            ImageView btnAdd = FindViewById<ImageView>(Resource.Id.addpage);
             Button btnDelete = FindViewById<Button>(Resource.Id.remove);
             Button btnAppove = FindViewById<Button>(Resource.Id.btnApproved);
             Button btnDisapproved = FindViewById<Button>(Resource.Id.btnDisApproved);
@@ -57,6 +57,7 @@ namespace Device_Check_App
             listViewData = FindViewById<ListView>(Resource.Id.listView);
             LoadData();
             //Page Naviagtion (Add new Page)
+            btnAdd.SetImageResource(Resource.Drawable.addnewdevice);
             btnAdd.Click += delegate
             {
                 StartActivity(typeof(Add));

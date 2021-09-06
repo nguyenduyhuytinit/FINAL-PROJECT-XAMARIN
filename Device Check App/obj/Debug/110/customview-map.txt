@@ -9,7 +9,6 @@ Button;obj\Debug\110\res\layout\forggot_pass.xml
 Button;obj\Debug\110\res\layout\login.xml
 Button;obj\Debug\110\res\layout\sign_up.xml
 cache-path;F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\lp\41\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
-color;obj\Debug\110\res\drawable\values\ic_launcher_background.xml
 color;obj\Debug\110\res\values\colors.xml
 color;obj\Debug\110\res\values\ic_launcher_background.xml
 EditText;obj\Debug\110\res\layout\activity_main.xml
@@ -22,6 +21,8 @@ external-cache-path;F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check A
 external-path;F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\lp\41\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
+ImageButton;obj\Debug\110\res\layout\login.xml
+ImageView;obj\Debug\110\res\layout\admin_activity.xml
 ImageView;obj\Debug\110\res\layout\login.xml
 item;obj\Debug\110\res\values\styles.xml
 LinearLayout;obj\Debug\110\res\layout\activity_main.xml
@@ -34,9 +35,6 @@ LinearLayout;obj\Debug\110\res\layout\sign_up.xml
 ListView;obj\Debug\110\res\layout\activity_main.xml
 ListView;obj\Debug\110\res\layout\admin_activity.xml
 paths;F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\lp\41\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
-RadioButton;obj\Debug\110\res\layout\sign_up.xml
-RadioGroup;obj\Debug\110\res\layout\sign_up.xml
-resources;obj\Debug\110\res\drawable\values\ic_launcher_background.xml
 resources;obj\Debug\110\res\values\colors.xml
 resources;obj\Debug\110\res\values\ic_launcher_background.xml
 resources;obj\Debug\110\res\values\strings.xml

@@ -74,16 +74,14 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:id="@+id/buttonFacebook" />
-    <TextView
-        android:text="Don't have an account? Sign up "
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_width="match_parent"
+
+    <ImageView
+         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:textColor="#fff"
-        android:gravity="center"
-        android:autoLink="all"
-        android:id="@+id/textViewSignup" />
+        android:minWidth="250dp"
+        android:layout_gravity="center"
+        android:id="@+id/btnImageSignup"/>
 
 
 </LinearLayout>
