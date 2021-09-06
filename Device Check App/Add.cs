@@ -25,12 +25,9 @@ namespace Device_Check_App
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.add);
             // Create your application here
-            Button button = FindViewById<Button>(Resource.Id.back);
+            
 
-            button.Click += delegate
-            {
-                StartActivity(typeof(MainActivity));
-            };
+
             // Create your application here
             db = new Database();
             db.createDatabase();

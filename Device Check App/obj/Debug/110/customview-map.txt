@@ -41,6 +41,7 @@ resources;obj\Debug\110\res\values\styles.xml
 string;obj\Debug\110\res\values\strings.xml
 style;obj\Debug\110\res\values\styles.xml
 TextView;obj\Debug\110\res\layout\activity_main.xml
+TextView;obj\Debug\110\res\layout\add.xml
 TextView;obj\Debug\110\res\layout\admin_activity.xml
 TextView;obj\Debug\110\res\layout\forggot_pass.xml
 TextView;obj\Debug\110\res\layout\listview.xml

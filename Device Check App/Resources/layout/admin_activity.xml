@@ -1,27 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:background="#515F8E"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    
 
- <LinearLayout  
-        android:layout_width="match_parent"  
-        android:layout_height="wrap_content"  
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="99.5dp"
         android:orientation="horizontal">
-        
+        <LinearLayout
+            android:paddingLeft="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Welcome To Our Library"
+                android:textColor="@android:color/white"
+                android:textSize="30dp"
+                android:paddingLeft="15dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+       
+
+    
+    
+    </LinearLayout>
         <TextView
+            
+          
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
         android:text="Username:"
+            android:textColor="@android:color/white"
         android:textSize="@dimen/abc_action_bar_icon_vertical_padding_material"
         android:id="@+id/userName"
         /> 
-
-        </LinearLayout>
-        
      
         <TextView
+        android:textColor="@android:color/white"
         android:layout_width="match_parent"
+        android:paddingLeft="5dp"
         android:layout_height="wrap_content"
         android:text="Device Name"
         android:textSize="@dimen/abc_action_bar_icon_vertical_padding_material"
@@ -31,6 +54,8 @@
      <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+      android:textColor="@android:color/white"
         android:text= "Status"
         android:id="@+id/deviceStatus"
        android:textSize="@dimen/abc_action_bar_icon_vertical_padding_material"
@@ -40,14 +65,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Borrower Name"
+        android:paddingLeft="5dp"
+       android:textColorHint="@android:color/white"
         android:id="@+id/borrower"
        android:textSize="@dimen/abc_action_bar_icon_vertical_padding_material"
         android:inputType="text"/>
 
       <EditText
+       
+        android:paddingLeft="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Team Name"
+       android:textColorHint="@android:color/white"
         android:id="@+id/borrowerTeam"
        android:textSize="@dimen/abc_action_bar_icon_vertical_padding_material"
         android:inputType="text"
@@ -57,7 +87,9 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
         android:hint="Pick date to return"
+        android:textColorHint="@android:color/white"
         android:id="@+id/returnDate"
        android:textSize="@dimen/abc_action_bar_icon_vertical_padding_material"
         android:inputType="text"
@@ -67,7 +99,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Reason"
+        android:paddingLeft="5dp"
         android:id="@+id/reason"
+       android:textColorHint="@android:color/white"
        android:textSize="@dimen/abc_action_bar_icon_vertical_padding_material"
         android:inputType="text"
         />
@@ -76,6 +110,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text= "Borrow Date"
+        android:paddingLeft="5dp"
+       android:textColor="@android:color/white"
         android:id="@+id/borrowedDate"
        android:textSize="@dimen/abc_action_bar_icon_vertical_padding_material"
         />
@@ -111,6 +147,20 @@
 
     </LinearLayout>
 
+     <LinearLayout  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:orientation="horizontal">
+        
+            <Button  
+            android:id="@+id/btnDisApproved"  
+            android:layout_width="match_parent"  
+            android:layout_height="wrap_content"  
+            android:text="DisApproved"  
+            /> 
+       
+
+    </LinearLayout>
 
 
     <LinearLayout  
@@ -127,6 +177,17 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnlogout"
+            android:text="Log Out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
     <ListView  
         android:minWidth="25px"  

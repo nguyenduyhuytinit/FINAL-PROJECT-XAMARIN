@@ -48,12 +48,16 @@ namespace Device_Check_App
             var borrowDate = FindViewById<TextView>(Resource.Id.borrowedDate);
             var reason = FindViewById<EditText>(Resource.Id.reason);
             var userName = FindViewById<TextView>(Resource.Id.userName);
+            Button btnLogout = FindViewById<Button>(Resource.Id.btnLogOut);
 
             //get Username
             SESSSION_EMAIL = session.GetString("EMAIL", "");
             SESSSION_ROLE = session.GetString("ROLE", "");
           
-            userName.Text = SESSSION_EMAIL; 
+            userName.Text = SESSSION_EMAIL;
+
+            //Button Logout Click
+            btnLogout.Click += delegate { StartActivity(typeof(LoginActivity)); };
 
             //Load Database
             db = new Database();

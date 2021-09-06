@@ -36,6 +36,7 @@ namespace Device_Check_App
             Button btnAdd = FindViewById<Button>(Resource.Id.addpage);
             Button btnDelete = FindViewById<Button>(Resource.Id.remove);
             Button btnAppove = FindViewById<Button>(Resource.Id.btnApproved);
+            Button btnDisapproved = FindViewById<Button>(Resource.Id.btnDisApproved);
             var deviceName = FindViewById<TextView>(Resource.Id.deviceName);
             var status = FindViewById<TextView>(Resource.Id.deviceStatus);
             var borrower = FindViewById<EditText>(Resource.Id.borrower);
@@ -44,6 +45,7 @@ namespace Device_Check_App
             var borrowDate = FindViewById<TextView>(Resource.Id.borrowedDate);
             var reason = FindViewById<EditText>(Resource.Id.reason);
             var userName = FindViewById<TextView>(Resource.Id.userName);
+            Button btnLogout = FindViewById<Button>(Resource.Id.btnlogout);
 
 
             //get Username
@@ -60,6 +62,9 @@ namespace Device_Check_App
                 StartActivity(typeof(Add));
             };
 
+
+            //Button Logout Clicked
+            btnLogout.Click += delegate { StartActivity(typeof(LoginActivity)); };
 
             //Button Delete
             btnDelete.Click += delegate
@@ -80,7 +85,7 @@ namespace Device_Check_App
                 OnClickReturnDateTxt();
             };
 
-            //Button Borrow
+            //Button Approved
             btnAppove.Click += delegate
             {
                 if (status.Text.Equals("Pending"))
@@ -116,7 +121,46 @@ namespace Device_Check_App
 
             };
 
-            
+            //Button DisApproved
+            btnDisapproved.Click += delegate
+            {
+                if (status.Text.Equals("Pending"))
+                {
+                    //Send Mail
+                    mail = new MailMessage("xamarinproject111@gmail.com", borrower.Text, "System Notice", "Your Request Was Not Approved");
+                    SmtpClient client = new SmtpClient();
+                    client.Host = ("smtp.gmail.com");
+                    client.Port = 587;
+                    client.Credentials = new System.Net.NetworkCredential("xamarinproject111@gmail.com", "Hoanhdung");
+                    client.EnableSsl = true;
+
+                    client.Send(mail);
+
+                    Device device = new Device()
+                    {
+
+                        Id = int.Parse(deviceName.Tag.ToString()),
+                        Device_Name = deviceName.Text,
+                        Status = "Available",
+                        Borrower = string.Empty,
+                        Team_Borrower = string.Empty,
+                        Borrowed_Date = string.Empty,
+                        Return_Date = System.DateTime.Now.ToString("yyyy-MM-dd"),
+                        Reason_Borrow = string.Empty,
+                        Uname = string.Empty
+                    };
+                    db.updateTable(device);
+                    
+                    //Load Data
+                    LoadData();
+                    Toast.MakeText(this, "Susscess borrow this device", ToastLength.Long).Show();
+                }
+                else
+                    Toast.MakeText(this, "Can't borrow because this Device is " + status.Text, ToastLength.Long).Show();
+
+            };
+
+
 
             //Item Click
             listViewData.ItemClick += (s, e) =>
