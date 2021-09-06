@@ -47,9 +47,7 @@ namespace Device_Check_App
             buttonSignup.Click += ButtonSignup_Click;
 
             //ROLES***************************************************
-            RadioButton radioBtnAdmin = FindViewById<RadioButton>(Resource.Id.radio_admin);
             RadioButton radioBtnUser = FindViewById<RadioButton>(Resource.Id.radio_user);
-            radioBtnAdmin.Click += RadioButton_Click;
             radioBtnUser.Click += RadioButton_Click;
 
         }
@@ -63,7 +61,6 @@ namespace Device_Check_App
             string inputPass = editTextPass.Text.ToString();
             
             var emailValidate = isValidEmail(inputEmail);
-            RadioButton radioBtnAdmin = FindViewById<RadioButton>(Resource.Id.radio_admin);
             RadioButton radioBtnUser = FindViewById<RadioButton>(Resource.Id.radio_user);
             try
             {
@@ -99,12 +96,8 @@ namespace Device_Check_App
                     User tbl = new User();
                    tbl.Email = editTextEmail.Text;
                     tbl.Password = editTextPass.Text;
-                    //ROLES***************************************************
-
-                    //Add roles
-                    if (radioBtnAdmin.Checked)
-                        tbl.Role = "ADMIN";
-                    else if (radioBtnUser.Checked)
+                    //ROLES***************************************************;
+                      if (radioBtnUser.Checked)
                         tbl.Role = "USER";
 
                     //TODO WHAT??    Xứ lý ràng buộc unique email 

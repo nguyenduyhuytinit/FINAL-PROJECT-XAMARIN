@@ -55,6 +55,16 @@ namespace Device_Check_App
             buttonFacebook = FindViewById<Button>(Resource.Id.buttonFacebook);
             buttonFacebook.Click += ButtonFacebook_Click;
 
+            //Add Addmin Account
+            string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Device.db");
+            var db = new SQLiteConnection(dbPath);
+
+                db.CreateTable<User>();
+                User admin = new User();
+                admin.Email = "admin";
+                admin.Password = "admin";
+                admin.Role = "ADMIN";
+                db.Insert(admin);
 
         }
 
@@ -71,7 +81,6 @@ namespace Device_Check_App
 
             editTextLogin = FindViewById<EditText>(Resource.Id.editTextLogin);
             editTextPass = FindViewById<EditText>(Resource.Id.editTextPass);
-            RadioButton radioBtnAdmin = FindViewById<RadioButton>(Resource.Id.radio_admin);
             RadioButton radioBtnUser = FindViewById<RadioButton>(Resource.Id.radio_user);
              Database _db = new Database();
 
