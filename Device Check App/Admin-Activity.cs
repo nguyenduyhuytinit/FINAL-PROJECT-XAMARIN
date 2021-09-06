@@ -170,6 +170,8 @@ namespace Device_Check_App
                 for (int i = 0; i < listViewData.Count; i++)
                 {
                     if (e.Position == i)
+                        listViewData.GetChildAt(i).SetBackgroundColor(Android.Graphics.Color.WhiteSmoke);
+                    else
                         listViewData.GetChildAt(i).SetBackgroundColor(Android.Graphics.Color.Transparent);
 
                 }
@@ -209,7 +211,7 @@ namespace Device_Check_App
         private void LoadData()
         {
 
-            listSource = db.FindAllStatusPending();
+            listSource = db.selectTable();
             var adapter = new ListViewAdapter(this, listSource);
             listViewData.Adapter = adapter;
         }

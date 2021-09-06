@@ -64,15 +64,6 @@
        android:textSize="@dimen/abc_action_bar_icon_vertical_padding_material"
         />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Borrower Name"
-       android:textColorHint="@android:color/white"
-        android:id="@+id/borrower"
-        android:paddingLeft="5dp"
-       android:textSize="@dimen/abc_action_bar_icon_vertical_padding_material"
-        android:inputType="text"/>
 
       <EditText
         
@@ -119,7 +110,16 @@
          android:textSize="@dimen/abc_action_bar_icon_vertical_padding_material"
         />
 
-
+    
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Borrower Name"
+       android:textColorHint="@android:color/white"
+        android:id="@+id/borrower"
+        android:paddingLeft="5dp"
+       android:textSize="@dimen/abc_action_bar_icon_vertical_padding_material"
+        android:inputType="text"/>
 
        <LinearLayout  
         android:layout_width="match_parent"  

@@ -5,30 +5,14 @@
     android:layout_height="match_parent"
     android:background="#515F8E"
     >
-
-    <TextView
-        android:text="welcome"
+    <ImageView
+        android:src="@android:drawable/ic_menu_gallery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:gravity="center"
-        android:layout_marginTop="30dp"
-        android:textSize="25sp"
-        android:textColor="#fff"
-        android:id="@+id/textViewWelcome" />
+        android:id="@+id/imgIcon"
+    />
 
-    <TextView
-        android:text="Enter_acc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:textSize="15sp"
-        android:textColor="#fff"
-        android:id="@+id/textViewMess" />
+   
 
     <EditText
         android:layout_width="match_parent"

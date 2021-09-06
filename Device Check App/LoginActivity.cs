@@ -48,7 +48,9 @@ namespace Device_Check_App
             loginBtn = FindViewById<Button>(Resource.Id.buttonLogin1);
             loginBtn.Click += LoginButton_Clicked;
 
-
+            //Img icon
+            ImageView imgIcon = FindViewById<ImageView>(Resource.Id.imgIcon);
+            imgIcon.SetImageResource(Resource.Mipmap.ic_launcher_foreground);
 
             //Login with Facebook
 
@@ -81,7 +83,6 @@ namespace Device_Check_App
 
             editTextLogin = FindViewById<EditText>(Resource.Id.editTextLogin);
             editTextPass = FindViewById<EditText>(Resource.Id.editTextPass);
-            RadioButton radioBtnUser = FindViewById<RadioButton>(Resource.Id.radio_user);
              Database _db = new Database();
 
         //Get user from table=[users] === Info entry

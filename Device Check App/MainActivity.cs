@@ -50,6 +50,7 @@ namespace Device_Check_App
             var userName = FindViewById<TextView>(Resource.Id.userName);
             Button btnLogout = FindViewById<Button>(Resource.Id.btnLogOut);
 
+            borrower.Visibility = Android.Views.ViewStates.Invisible;
             //get Username
             SESSSION_EMAIL = session.GetString("EMAIL", "");
             SESSSION_ROLE = session.GetString("ROLE", "");
@@ -153,8 +154,9 @@ namespace Device_Check_App
                 for (int i = 0; i < listViewData.Count; i++)
                 {
                     if (e.Position == i)
+                        listViewData.GetChildAt(i).SetBackgroundColor(Android.Graphics.Color.WhiteSmoke);
+                    else
                         listViewData.GetChildAt(i).SetBackgroundColor(Android.Graphics.Color.Transparent);
-
                 }
                 //Binding Data  
                 var txtDeviceName = e.View.FindViewById<TextView>(Resource.Id.txtView_DeviceName);

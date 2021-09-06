@@ -73,22 +73,6 @@
         />
         
 
-    <RadioGroup
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:orientation="vertical"
-          android:layout_marginHorizontal="20dp"
-          android:layout_marginTop="13dp"
-          android:id="@+id/radioGroup1"
-          >
-      <RadioButton
-          android:id="@+id/radio_user"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:text="USER"
-          android:textColor="@android:color/white"
-          />
-      </RadioGroup>
 
  
      <Button

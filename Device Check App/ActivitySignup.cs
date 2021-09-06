@@ -46,10 +46,6 @@ namespace Device_Check_App
             buttonSignup = FindViewById<Button>(Resource.Id.buttonSignup);
             buttonSignup.Click += ButtonSignup_Click;
 
-            //ROLES***************************************************
-            RadioButton radioBtnUser = FindViewById<RadioButton>(Resource.Id.radio_user);
-            radioBtnUser.Click += RadioButton_Click;
-
         }
 
 
@@ -61,7 +57,6 @@ namespace Device_Check_App
             string inputPass = editTextPass.Text.ToString();
             
             var emailValidate = isValidEmail(inputEmail);
-            RadioButton radioBtnUser = FindViewById<RadioButton>(Resource.Id.radio_user);
             try
             {
                 //Password equal confirm_pass ---editTextEmail.Text !="" && editTextPass.Text !="" && editTextPass.Text == editTextConfirmPass.Text
@@ -96,9 +91,7 @@ namespace Device_Check_App
                     User tbl = new User();
                    tbl.Email = editTextEmail.Text;
                     tbl.Password = editTextPass.Text;
-                    //ROLES***************************************************;
-                      if (radioBtnUser.Checked)
-                        tbl.Role = "USER";
+                     tbl.Role = "USER";
 
                     //TODO WHAT??    Xứ lý ràng buộc unique email 
                     //var SQL = db.Query<LoginTable>("SELECT * from users where email=editTextEmail.Text"); failed
@@ -109,9 +102,7 @@ namespace Device_Check_App
                     {
                         db.Insert(tbl);
                         Toast.MakeText(this, "Sign up successfully", ToastLength.Short).Show();
-                        StartActivity(typeof(LoginActivity));
-                        
-                        
+                        StartActivity(typeof(LoginActivity)); 
                     }
                     else
                         Toast.MakeText(this, "Email already exists!", ToastLength.Short).Show();
