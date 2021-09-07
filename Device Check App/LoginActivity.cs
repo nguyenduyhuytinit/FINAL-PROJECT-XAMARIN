@@ -39,11 +39,11 @@ namespace Device_Check_App
 
 
             // Direct to Forgotpass
-            textViewForgotPass = FindViewById<TextView>(Resource.Id.textViewForgotPass);
-            textViewForgotPass.Click += delegate { StartActivity(typeof(ActivityForgotPass)); };
+
 
             //Button login
-            loginBtn = FindViewById<Button>(Resource.Id.buttonLogin1);
+            ImageView loginBtn = FindViewById<ImageView>(Resource.Id.buttonLogin1);
+            loginBtn.SetImageResource(Resource.Drawable.LoginIcon);
             loginBtn.Click += LoginButton_Clicked;
 
             //Img icon
@@ -52,7 +52,8 @@ namespace Device_Check_App
 
             //Login with Facebook
 
-            buttonFacebook = FindViewById<Button>(Resource.Id.buttonFacebook);
+            ImageView buttonFacebook = FindViewById<ImageView>(Resource.Id.buttonFacebook);
+            buttonFacebook.SetImageResource(Resource.Drawable.GmailLoginIcon);
             buttonFacebook.Click += ButtonFacebook_Click;
 
             //BTN IMAGE SINGUP

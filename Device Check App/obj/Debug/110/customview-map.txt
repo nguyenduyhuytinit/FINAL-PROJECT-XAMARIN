@@ -22,8 +22,11 @@ external-path;F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 ImageButton;obj\Debug\110\res\layout\login.xml
+ImageView;obj\Debug\110\res\layout\activity_main.xml
+ImageView;obj\Debug\110\res\layout\add.xml
 ImageView;obj\Debug\110\res\layout\admin_activity.xml
 ImageView;obj\Debug\110\res\layout\login.xml
+ImageView;obj\Debug\110\res\layout\sign_up.xml
 item;obj\Debug\110\res\values\styles.xml
 LinearLayout;obj\Debug\110\res\layout\activity_main.xml
 LinearLayout;obj\Debug\110\res\layout\add.xml

@@ -34,9 +34,9 @@ namespace Device_Check_App
             SetContentView(Resource.Layout.admin_activity);
 
             ImageView btnAdd = FindViewById<ImageView>(Resource.Id.addpage);
-            Button btnDelete = FindViewById<Button>(Resource.Id.remove);
-            Button btnAppove = FindViewById<Button>(Resource.Id.btnApproved);
-            Button btnDisapproved = FindViewById<Button>(Resource.Id.btnDisApproved);
+            ImageView btnDelete = FindViewById<ImageView>(Resource.Id.remove);
+            ImageView btnAppove = FindViewById<ImageView>(Resource.Id.btnApproved);
+            ImageView btnDisapproved = FindViewById<ImageView>(Resource.Id.btnDisApproved);
             var deviceName = FindViewById<TextView>(Resource.Id.deviceName);
             var status = FindViewById<TextView>(Resource.Id.deviceStatus);
             var borrower = FindViewById<EditText>(Resource.Id.borrower);
@@ -45,7 +45,7 @@ namespace Device_Check_App
             var borrowDate = FindViewById<TextView>(Resource.Id.borrowedDate);
             var reason = FindViewById<EditText>(Resource.Id.reason);
             var userName = FindViewById<TextView>(Resource.Id.userName);
-            Button btnLogout = FindViewById<Button>(Resource.Id.btnlogout);
+            ImageView btnLogout = FindViewById<ImageView>(Resource.Id.btnlogout);
 
 
             //get Username
@@ -65,9 +65,11 @@ namespace Device_Check_App
 
 
             //Button Logout Clicked
+            btnLogout.SetImageResource(Resource.Drawable.SignOutIcon);
             btnLogout.Click += delegate { StartActivity(typeof(LoginActivity)); };
 
             //Button Delete
+            btnDelete.SetImageResource(Resource.Drawable.RemoveIcon);
             btnDelete.Click += delegate
             {
                 Device device = new Device()
@@ -87,6 +89,7 @@ namespace Device_Check_App
             };
 
             //Button Approved
+            btnAppove.SetImageResource(Resource.Drawable.ApprovedIcon);
             btnAppove.Click += delegate
             {
                 if (status.Text.Equals("Pending"))
@@ -123,6 +126,7 @@ namespace Device_Check_App
             };
 
             //Button DisApproved
+            btnDisapproved.SetImageResource(Resource.Drawable.DissApprovedIcon);
             btnDisapproved.Click += delegate
             {
                 if (status.Text.Equals("Pending"))

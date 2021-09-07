@@ -43,7 +43,8 @@ namespace Device_Check_App
             editTextPass = FindViewById<EditText>(Resource.Id.editTextPass);
             editTextConfirmPass = FindViewById<EditText>(Resource.Id.editTextConfirmPass);
 
-            buttonSignup = FindViewById<Button>(Resource.Id.buttonSignup);
+            ImageView buttonSignup = FindViewById<ImageView>(Resource.Id.buttonSignup);
+            buttonSignup.SetImageResource(Resource.Drawable.LoginIcon);
             buttonSignup.Click += ButtonSignup_Click;
 
         }

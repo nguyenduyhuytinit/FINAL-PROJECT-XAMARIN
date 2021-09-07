@@ -39,16 +39,7 @@
         />
 
 
-    <TextView
-        android:text="Forgot password?"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:gravity="center"
-        android:textColor="#fff"
-        android:id="@+id/textViewForgotPass" />
-    <Button
+    <ImageView
         android:text="Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,16 +48,7 @@
         android:layout_gravity="center"
         android:onClick="LoginButton_Clicked"
         android:id="@+id/buttonLogin1" />
-    <TextView
-        android:text="Or login with Google account"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textColor="#fff"
-        android:gravity="center"
-        android:id="@+id/textViewChooseLogin" />
-    <Button
+    <ImageView
         android:text="Google"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

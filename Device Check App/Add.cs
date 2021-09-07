@@ -32,10 +32,10 @@ namespace Device_Check_App
             db = new Database();
             db.createDatabase();
 
-            var btnAdd = FindViewById<Button>(Resource.Id.addnew);
+            var btnAdd = FindViewById<ImageView>(Resource.Id.addnew);
             var deviceName = FindViewById<EditText>(Resource.Id.deviceName);
             //var deviceStatus = FindViewById<EditText>(Resource.Id.deviceStatus);
-
+            btnAdd.SetImageResource(Resource.Drawable.AddNewDeviceIcon);
             //
             btnAdd.Click += delegate
             {

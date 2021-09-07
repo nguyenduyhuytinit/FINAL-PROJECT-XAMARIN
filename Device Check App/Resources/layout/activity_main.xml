@@ -126,7 +126,7 @@
         android:layout_height="wrap_content"  
         android:orientation="horizontal">
         
-            <Button  
+            <ImageView  
             android:id="@+id/btnborrow"  
             android:layout_width="match_parent"  
             android:layout_height="wrap_content"  
@@ -141,7 +141,7 @@
         android:layout_height="wrap_content"  
         android:orientation="horizontal">
         
-            <Button  
+            <ImageView  
             android:id="@+id/returnDevice"  
             android:layout_width="match_parent"  
             android:layout_height="wrap_content"  
@@ -152,7 +152,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <Button
+        <ImageView
             android:id="@+id/btnLogOut"
             android:text="Log Out"
             android:layout_width="match_parent"

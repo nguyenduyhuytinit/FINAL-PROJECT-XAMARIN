@@ -38,8 +38,8 @@ namespace Device_Check_App
              
             Button btnAdd = FindViewById<Button>(Resource.Id.addpage);
             Button btnDelete = FindViewById<Button>(Resource.Id.remove);
-            Button btnBorrow = FindViewById<Button>(Resource.Id.btnborrow);
-            Button btnReturn = FindViewById<Button>(Resource.Id.returnDevice);
+            ImageView btnBorrow = FindViewById<ImageView>(Resource.Id.btnborrow);
+            ImageView btnReturn = FindViewById<ImageView>(Resource.Id.returnDevice);
             var deviceName = FindViewById<TextView>(Resource.Id.deviceName);
             var status = FindViewById<TextView>(Resource.Id.deviceStatus);
             var borrower = FindViewById<EditText>(Resource.Id.borrower);
@@ -48,7 +48,7 @@ namespace Device_Check_App
             var borrowDate = FindViewById<TextView>(Resource.Id.borrowedDate);
             var reason = FindViewById<EditText>(Resource.Id.reason);
             var userName = FindViewById<TextView>(Resource.Id.userName);
-            Button btnLogout = FindViewById<Button>(Resource.Id.btnLogOut);
+            ImageView btnLogout = FindViewById<ImageView>(Resource.Id.btnLogOut);
 
             borrower.Visibility = Android.Views.ViewStates.Invisible;
             //get Username
@@ -58,6 +58,7 @@ namespace Device_Check_App
             userName.Text = SESSSION_EMAIL;
 
             //Button Logout Click
+            btnLogout.SetImageResource(Resource.Drawable.SignOutIcon);
             btnLogout.Click += delegate { StartActivity(typeof(LoginActivity)); };
 
             //Load Database
@@ -73,6 +74,7 @@ namespace Device_Check_App
             };
 
             //Button Borrow
+            btnBorrow.SetImageResource(Resource.Drawable.Borrow);
             btnBorrow.Click += delegate
             {
                 if (status.Text.Equals("Available")) 
@@ -110,6 +112,7 @@ namespace Device_Check_App
             };
 
             //Button Return
+            btnReturn.SetImageResource(Resource.Drawable.ReturnIcon);
             btnReturn.Click += delegate
             {
                 if (status.Text.Equals("Pending") || status.Text.Equals("Borrowed"))

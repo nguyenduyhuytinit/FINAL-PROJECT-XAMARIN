@@ -381,3 +381,12 @@ F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\drawable\ic_launcher_round.png
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\drawable\add.png
 F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\drawable\addnewdevice.png
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\drawable\borrow.png
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\drawable\returnicon.png
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\drawable\dissapprovedicon.png
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\drawable\approvedicon.png
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\drawable\removeicon.png
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\drawable\signouticon.png
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\drawable\addnewdeviceicon.png
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\drawable\loginicon.png
+F:\Xamarin\Final Ex FPT\FINAL-PROJECT-XAMARIN\Device Check App\obj\Debug\110\res\drawable\gmailloginicon.png
